@@ -1,0 +1,91 @@
+/* コンテナのスタイル */
+.container {
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* フォームのスタイル */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* タイトルを中央に */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* パスワード表示部分のスタイル */
+.password-display {
+    text-align: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+#copyTarget {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    background-color: #e9f7ef;
+    word-break: break-all; /* パスワードが長い場合に折り返す */
+}
+
+/* ボタンスタイル */
+button, input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* 吹き出し風通知 */
+.copy-notification {
+    visibility: hidden;
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    background-color: #ffffff; /* 白色背景 */
+    color: #000000; /* 黒色文字 */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+}
+
+/* チェックボックスの整列 */
+.form-check {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 10px;
+}
+
+.form-check input[type="checkbox"] {
+    margin-right: 10px; /* チェックボックスとラベルの間隔を調整 */
+}
+
+.form-check-label {
+    text-align: left;
+    font-weight: normal;
+}

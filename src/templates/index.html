@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Flask App</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7S0npJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geP1Gnv5bo7jVRCIzcWF4NKdIY6Vu89kVTs0vT+t9ED+lZDMKzD9eXAWqH9SV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>パスワード生成ツール</h1>
+
+        <form action="/" method="POST" class="form-container">
+            <h3>パスワードの文字数制限（〇〇以下）</h3>
+            <select class="form-select maxcharacter" name="max">
+                <option>文字数制限なし</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+                <option>27</option>
+                <option>28</option>
+                <option>29</option>
+                <option>30</option>
+                <option>31</option>
+                <option>32</option>
+            </select>
+
+            <h3>パスワードの条件</h3>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="number" name="number" value="1">
+                <label class="form-check-label" for="number">数字を入れる</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="upper" name="upper" value="2">
+                <label class="form-check-label" for="upper">大文字英字を入れる</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="special" name="special" value="3">
+                <label class="form-check-label" for="special">特殊文字を入れる</label>
+            </div>
+
+            
+            <input type="submit" value="生成" class="btn btn-primary">
+        </form>
+
+        <!-- パスワード表示部分 -->
+        <div class="password-display">
+            <h1 id="copyTarget">{{ password }}</h1>
+            <button class="btn btn-primary" onclick="copyToClipboard()">コピー</button>
+            <span id="copyNotification" class="copy-notification">コピーしました！</span>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const copyText = document.getElementById("copyTarget").textContent;
+            navigator.clipboard.writeText(copyText)
+                .then(() => {
+                    const notification = document.getElementById("copyNotification");
+                    notification.style.visibility = "visible";
+                    setTimeout(() => {
+                        notification.style.visibility = "hidden";
+                    }, 2000); // 2秒後に通知を非表示に
+                })
+                .catch(err => {
+                    console.error('コピーに失敗しました', err);
+                });
+        }
+    </script>
+</body>
+
+
+
+
+</html>
+
+
